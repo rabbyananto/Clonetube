@@ -168,5 +168,4 @@ const Menu = ({ darkMode, setDarkMode }) => {
     </Container>
   );
 };
-
 export default Menu;
