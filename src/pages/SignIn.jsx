@@ -66,7 +66,7 @@ const SignIn = () => {
     <Container>
       <Wrapper>
         <Title>Sign In</Title>
-        <SubTitle>to continue to RabbyYT</SubTitle>
+        <SubTitle>to continue to CloneTube</SubTitle>
         <Input placeholder="username" />
         <Input type="password" placeholder="password" />
         <Button>Sign in</Button>
