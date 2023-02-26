@@ -80,7 +80,12 @@ const Title = styled.h2`
   color: #aaaaaa;
   margin-bottom: 20px;
 `;
-const Menu = ({ darkMode, setDarkMode }) => {
+const Menu = ({
+  darkMode,
+  setDarkMode,
+  selectedCategory,
+  setSelectedCategory,
+}) => {
   return (
     <Container>
       <Wrapper>
@@ -91,9 +96,9 @@ const Menu = ({ darkMode, setDarkMode }) => {
           </Logo>
         </Link>
 
-        <Item>
+        <Item onClick={() => setSelectedCategory(selectedCategory)}>
           <HomeIcon />
-          Home
+          {selectedCategory} Home
         </Item>
         <Item>
           <ExploreOutlinedIcon />
