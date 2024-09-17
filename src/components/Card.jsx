@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Poster from "../img/poster.jpg";
 
 const Container = styled.div`
   width: ${(props) => props.type !== "sm" && "360px"};
@@ -49,22 +48,19 @@ const Info = styled.div`
   color: ${({ theme }) => theme.textSoft};
 `;
 
-const Card = ({ type }) => {
+const Card = ({ type, video }) => {
   return (
-    <Link
-      to="/video/rabbyanantoyt_portugalvlog"
-      style={{ textDecoration: "none" }}
-    >
+    <Link to={`/video/${video.id.videoId}`} style={{ textDecoration: "none" }}>
       <Container type={type}>
-        <Image type={type} src={Poster} />
+        <Image type={type} src={video.snippet.thumbnails.default.url} />
         <Details type={type}>
           <ChannelImage
             type={type}
             src="https://mir-s3-cdn-cf.behance.net/user/276/32ce5d48101029.5a913bfd12e65.jpg"
           />
           <Texts>
-            <Title>Portugal Travel Vlog Series</Title>
-            <ChannelName>RabbyAnantoYT</ChannelName>
+            <Title>{video.snippet.title}</Title>
+            <ChannelName>{video.snippet.channelTitle}</ChannelName>
             <Info>660,908 views • 1 day ago</Info>
           </Texts>
         </Details>

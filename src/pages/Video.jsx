@@ -5,6 +5,7 @@ import {
   ThumbUpOutlined,
 } from "@mui/icons-material";
 import React from "react";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import Card from "../components/Card";
 import Comments from "../components/Comments";
@@ -107,6 +108,7 @@ const Subscribe = styled.button`
 `;
 
 const Video = () => {
+  const { id } = useParams();
   return (
     <Container>
       <Content>
@@ -114,7 +116,7 @@ const Video = () => {
           <iframe
             width="100%"
             height="720"
-            src="https://www.youtube.com/embed/OGL-MyFo0rU"
+            src={`https://www.youtube.com/embed/${id}`}
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -160,6 +162,7 @@ const Video = () => {
         <Comments />
       </Content>
       <Recommendation>
+        {/* <Card type="sm" />
         <Card type="sm" />
         <Card type="sm" />
         <Card type="sm" />
@@ -169,8 +172,7 @@ const Video = () => {
         <Card type="sm" />
         <Card type="sm" />
         <Card type="sm" />
-        <Card type="sm" />
-        <Card type="sm" />
+        <Card type="sm" /> */}
       </Recommendation>
     </Container>
   );
